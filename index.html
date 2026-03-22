@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site vitrine Secure Dash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HERO -->
+    <div class="main">
+        <div class="navbar">
+            <div class="icon"> 
+                <h2 class="logo">SecureDash</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#plateforme">Plateforme</a></li>
+                    <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#installer">Installer</a></li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="#installer" class="btn-installer">Installer →</a>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <p class="hero-label">Projet de Licence · Cybersécurité · 2025</p>
+            <h1 class="hero-titre">Surveillez votre réseau<br>avec un SOC open source</h1>
+            <p class="hero-desc">
+                SecureDash centralise les alertes de Suricata et Wazuh dans une seule interface.<br>
+                Tout tourne sur votre serveur — vos données ne partent nulle part.
+            </p>
+            <div class="hero-btns">
+                <a href="#installer" class="btn-orange">Installer SecureDash</a>
+                <a href="#plateforme" class="btn-transparent">Voir le dashboard</a>
+            </div>
+            <p class="hero-note">Open source · Gratuit · Aucune donnée externe</p>
+        </div>
+    </div>
+
+
+    <!-- BARRE OUTILS -->
+    <div class="barre-outils">
+        <p class="barre-label">Compatible avec</p>
+        <div class="outils-liste">
+            <span class="outil">🔴 Suricata IDS</span>
+            <span class="outil">🛡️ Wazuh HIDS</span>
+            <span class="outil">🔍 Elasticsearch 9.3</span>
+            <span class="outil">✈️ Telegram</span>
+            <span class="outil">📞 Infobip</span>
+            <span class="outil">🐳 Docker</span>
+        </div>
+    </div>
+
+
+    <!-- PLATEFORME -->
+    <div class="section" id="plateforme">
+        <div class="section-header">
+            <span class="section-tag">Plateforme</span>
+            <h2>Ce que vous voyez en ouvrant le dashboard</h2>
+            <p>Trois vues principales, conçues pour aller droit au but.</p>
+        </div>
+
+        <!-- Bloc 1 -->
+        <div class="bloc-feature">
+            <div class="bloc-texte">
+                <span class="bloc-tag">Vue d'ensemble</span>
+                <h3>Le tableau de bord</h3>
+                <p>
+                    Dès la connexion, vous avez une vue complète de ce qui se passe.
+                    La timeline se met à jour en direct — pas besoin de rafraîchir.
+                </p>
+                <ul class="feature-list">
+                    <li>Alertes critiques, élevées et informations en temps réel</li>
+                    <li>Timeline horaire ou quotidienne des événements</li>
+                    <li>Répartition Suricata vs Wazuh</li>
+                    <li>Top des adresses IP suspectes</li>
+                    <li>État en ligne / hors ligne des agents</li>
+                </ul>
+            </div>
+            <div class="bloc-img">
+                <img src="dashboard.png" alt="Tableau de bord SecureDash" onclick="ouvrirLightbox(this)">
+            </div>
+        </div>
+
+        <!-- Bloc 2 -->
+        <div class="bloc-feature bloc-feature-inverse">
+            <div class="bloc-texte">
+                <span class="bloc-tag">Gestion des alertes</span>
+                <h3>Toutes les alertes, bien rangées</h3>
+                <p>
+                    La page alertes affiche l'historique complet avec les filtres
+                    pour retrouver rapidement ce qu'on cherche.
+                </p>
+                <ul class="feature-list">
+                    <li>Filtre par sévérité : Critique, Élevé, Moyen</li>
+                    <li>Filtre par source : Suricata, Wazuh, Syslog</li>
+                    <li>Périodes : 1H, 6H, 24H, 7J, 30J</li>
+                    <li>Recherche par IP ou signature</li>
+                    <li>Export CSV en un clic</li>
+                </ul>
+            </div>
+            <div class="bloc-img">
+                <img src="alertes.png" alt="Page alertes SecureDash" onclick="ouvrirLightbox(this)">
+            </div>
+        </div>
+
+        <!-- Bloc 3 -->
+        <div class="bloc-feature">
+            <div class="bloc-texte">
+                <span class="bloc-tag">Suivi des incidents</span>
+                <h3>De l'alerte au rapport PDF</h3>
+                <p>
+                    Chaque alerte critique crée automatiquement un incident.
+                    L'analyste documente les actions et génère un rapport PDF depuis l'interface.
+                </p>
+                <ul class="feature-list">
+                    <li>Création automatique à chaque alerte critique</li>
+                    <li>Statuts : Nouveau → En correction → Résolu</li>
+                    <li>Cause racine, outils utilisés, recommandations</li>
+                    <li>Rapport PDF généré en un clic</li>
+                </ul>
+            </div>
+            <div class="bloc-img">
+                <img src="incidents.png" alt="Gestion des incidents SecureDash" onclick="ouvrirLightbox(this)">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FONCTIONNALITES -->
+    <div class="section section-gris" id="fonctionnalites">
+        <div class="section-header">
+            <span class="section-tag">Ce qui est inclus</span>
+            <h2>Six modules, zéro dépendance cloud</h2>
+            <p>Tout tourne sur votre machine. Aucune API externe obligatoire sauf pour les notifications.</p>
+        </div>
+
+        <div class="grille-6">
+
+            <div class="carte">
+                <div class="carte-icone icone-bleu">📊</div>
+                <h4>Dashboard temps réel</h4>
+                <p>Les alertes arrivent via WebSocket. ECharts 5 pour les graphiques, cache IndexedDB si vous perdez la connexion.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone icone-rouge">🚨</div>
+                <h4>Agrégation multi-sources</h4>
+                <p>Suricata, Wazuh et Syslog dans un seul endroit, récupérés depuis Elasticsearch et triés par criticité.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone icone-cyan">📋</div>
+                <h4>Gestion des incidents</h4>
+                <p>Cycle complet : détection, qualification, documentation et clôture. Chaque incident garde une trace.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone icone-orange">📞</div>
+                <h4>Notifications automatiques</h4>
+                <p>Selon le score, le dashboard appelle (Infobip), envoie un Telegram, ou enregistre silencieusement.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone icone-vert">📄</div>
+                <h4>Rapports PDF</h4>
+                <p>ReportLab génère un rapport d'incident complet : IP, signature, cause racine, recommandations.</p>
+            </div>
+
+            <div class="carte">
+                <div class="carte-icone icone-violet">✅</div>
+                <h4>Suivi de conformité</h4>
+                <p>Pages PCI-DSS, GDPR et HIPAA pour visualiser l'état de conformité de votre infrastructure.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- NOTIFICATIONS -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-tag">Notifications</span>
+            <h2>Averti au bon moment, de la bonne façon</h2>
+            <p>Pas d'alerte pour chaque ping. Le système fait la différence.</p>
+        </div>
+
+        <div class="grille-3">
+
+            <div class="notif-carte notif-rouge">
+                <div class="notif-haut">
+                    <span class="notif-badge badge-rouge">CRITIQUE</span>
+                    <span class="notif-score score-rouge">≥ 12</span>
+                </div>
+                <h4>Appel téléphonique</h4>
+                <p>Le daemon déclenche un appel via Infobip. L'analyste est joint directement, quelle que soit l'heure.</p>
+                <span class="notif-canal canal-rouge">📞 Infobip Voice</span>
+            </div>
+
+            <div class="notif-carte notif-orange">
+                <div class="notif-haut">
+                    <span class="notif-badge badge-orange">ÉLEVÉ</span>
+                    <span class="notif-score score-orange">6 – 11</span>
+                </div>
+                <h4>Message Telegram</h4>
+                <p>Un message structuré part sur Telegram : IP source, signature de l'alerte et horodatage.</p>
+                <span class="notif-canal canal-orange">✈️ Telegram Bot</span>
+            </div>
+
+            <div class="notif-carte notif-bleu">
+                <div class="notif-haut">
+                    <span class="notif-badge badge-bleu">INFORMATIONNELLE</span>
+                    <span class="notif-score score-bleu">&lt; 6</span>
+                </div>
+                <h4>Dashboard seulement</h4>
+                <p>L'alerte est enregistrée et consultable dans la page Alertes. Aucune notification externe.</p>
+                <span class="notif-canal canal-bleu">📊 Dashboard</span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ARCHITECTURE -->
+    <div class="section section-sombre" id="architecture">
+        <div class="section-header">
+            <span class="section-tag section-tag-clair">Architecture</span>
+            <h2 class="titre-blanc">Comment les données circulent</h2>
+            <p class="texte-gris">De la détection à la notification, tout se passe en moins de 70 secondes et sans sortir de votre réseau.</p>
+        </div>
+
+        <div class="flux">
+            <div class="flux-bloc">
+                <span class="flux-emoji">🌐</span>
+                <strong>Suricata</strong>
+                <small>IDS réseau · 48K règles</small>
+            </div>
+            <span class="flux-fleche">→</span>
+            <div class="flux-bloc">
+                <span class="flux-emoji">🛡️</span>
+                <strong>Wazuh</strong>
+                <small>HIDS endpoints</small>
+            </div>
+            <span class="flux-fleche">→</span>
+            <div class="flux-bloc">
+                <span class="flux-emoji">🗄️</span>
+                <strong>Elasticsearch</strong>
+                <small>Index soc-alerts-*</small>
+            </div>
+            <span class="flux-fleche">→</span>
+            <div class="flux-bloc">
+                <span class="flux-emoji">⚙️</span>
+                <strong>Flask API</strong>
+                <small>Python · JWT · SocketIO</small>
+            </div>
+            <span class="flux-fleche">→</span>
+            <div class="flux-bloc">
+                <span class="flux-emoji">📊</span>
+                <strong>Dashboard</strong>
+                <small>ECharts 5 · WebSocket</small>
+            </div>
+        </div>
+
+        <div class="tech-liste">
+            <span class="tech">🐍 Python 3</span>
+            <span class="tech">⚗️ Flask 3.0</span>
+            <span class="tech">🔍 Elasticsearch 9.3</span>
+            <span class="tech">⚡ Flask-SocketIO</span>
+            <span class="tech">📊 ECharts 5</span>
+            <span class="tech">🔐 PyJWT</span>
+            <span class="tech">📄 ReportLab</span>
+            <span class="tech">📱 Telegram Bot</span>
+            <span class="tech">📞 Infobip</span>
+            <span class="tech">🐳 Docker</span>
+        </div>
+    </div>
+
+
+    <!-- INSTALLATION -->
+    <div class="section section-sombre" id="installer">
+        <div class="section-header">
+            <span class="section-tag section-tag-clair">Installation</span>
+            <h2 class="titre-blanc">Démarrer en quelques minutes</h2>
+            <p class="texte-gris">Deux façons d'installer selon votre configuration. La version Docker est la plus simple.</p>
+        </div>
+
+        <div class="install-grille">
+
+            <!-- Docker -->
+            <div class="install-carte install-vedette">
+                <span class="install-emoji">🐳</span>
+                <h3>Via Docker <span class="tag-recommande">Recommandé</span></h3>
+                <p>Docker installe toutes les dépendances automatiquement. Aucune config Python nécessaire.</p>
+
+                <div class="etapes">
+                    <div class="etape">
+                        <span class="etape-num">1</span>
+                        <div>
+                            <p class="etape-label">Récupérer le projet</p>
+                            <div class="code-ligne">
+                                <code>git clone https://github.com/votre-repo/soc-dashboard</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">2</span>
+                        <div>
+                            <p class="etape-label">Créer le fichier de config</p>
+                            <div class="code-ligne">
+                                <code>cp .env.example .env</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">3</span>
+                        <div>
+                            <p class="etape-label">Remplir les paramètres</p>
+                            <div class="code-ligne">
+                                <code>nano .env</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">4</span>
+                        <div>
+                            <p class="etape-label">Lancer avec Docker Compose</p>
+                            <div class="code-ligne">
+                                <code>docker compose up -d</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">5</span>
+                        <div>
+                            <p class="etape-label">Ouvrir le dashboard</p>
+                            <div class="code-ligne">
+                                <code>http://localhost:5000</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="install-note">Pré-requis : Docker Desktop installé sur votre machine.</p>
+            </div>
+
+            <!-- Manuel -->
+            <div class="install-carte">
+                <span class="install-emoji">🐍</span>
+                <h3>Installation manuelle</h3>
+                <p>Pour les environnements sans Docker ou si vous préférez tout contrôler. Python 3.10 minimum.</p>
+
+                <div class="etapes">
+                    <div class="etape">
+                        <span class="etape-num">1</span>
+                        <div>
+                            <p class="etape-label">Cloner le dépôt</p>
+                            <div class="code-ligne">
+                                <code>git clone https://github.com/votre-repo/soc-dashboard</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">2</span>
+                        <div>
+                            <p class="etape-label">Installer les dépendances</p>
+                            <div class="code-ligne">
+                                <code>pip install -r requirements.txt</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">3</span>
+                        <div>
+                            <p class="etape-label">Configurer l'environnement</p>
+                            <div class="code-ligne">
+                                <code>cp .env.example .env && nano .env</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">4</span>
+                        <div>
+                            <p class="etape-label">Lancer l'application</p>
+                            <div class="code-ligne">
+                                <code>python app.py</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <span class="etape-num">5</span>
+                        <div>
+                            <p class="etape-label">Ouvrir dans le navigateur</p>
+                            <div class="code-ligne">
+                                <code>http://localhost:5000</code>
+                                <button class="btn-copier" onclick="copier(this)">Copier</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="install-note">Pré-requis : Python 3.10+, pip, Elasticsearch accessible.</p>
+            </div>
+
+        </div>
+
+        <!-- Config .env -->
+        <div class="env-bloc">
+            <p class="env-titre">Variables à renseigner dans .env</p>
+            <div class="env-grille">
+                <div class="env-item">
+                    <p class="env-cat">Elasticsearch</p>
+                    <code>ES_HOST<br>ES_PORT<br>ES_USER<br>ES_PASSWORD</code>
+                </div>
+                <div class="env-item">
+                    <p class="env-cat">Dashboard</p>
+                    <code>DASHBOARD_USER<br>DASHBOARD_PASSWORD</code>
+                </div>
+                <div class="env-item">
+                    <p class="env-cat">Telegram (optionnel)</p>
+                    <code>TELEGRAM_BOT_TOKEN<br>TELEGRAM_CHAT_ID</code>
+                </div>
+                <div class="env-item">
+                    <p class="env-cat">Infobip (optionnel)</p>
+                    <code>INFOBIP_API_KEY<br>INFOBIP_TO</code>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="cta">
+        <h2>Votre SOC est à une commande</h2>
+        <p>Open source, self-hosted, sans abonnement. Vos données restent chez vous.</p>
+        <div class="cta-btns">
+            <a href="#installer" class="btn-orange">Installer maintenant</a>
+            <a href="https://github.com" class="btn-blanc" target="_blank">Documentation GitHub</a>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-contenu">
+            <div class="footer-marque">
+                <h3 class="logo">SecureDash</h3>
+                <p>Tableau de bord SOC open source.<br>Projet de Licence en cybersécurité.</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-titre">Plateforme</p>
+                <ul>
+                    <li><a href="#plateforme">Tableau de bord</a></li>
+                    <li><a href="#plateforme">Alertes</a></li>
+                    <li><a href="#plateforme">Incidents</a></li>
+                    <li><a href="#fonctionnalites">Conformité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <p class="footer-titre">Ressources</p>
+                <ul>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Guide d'installation</a></li>
+                    <li><a href="#">Changelog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <p class="footer-titre">Projet</p>
+                <ul>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#fonctionnalites">Technologies</a></li>
+                    <li><a href="#">Soutenance 2025</a></li>
+                    <li><a href="mailto:">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bas">
+            <p>© 2025 Mafaze OSSENI &amp; Riyad ODJOUADE — Projet de Licence</p>
+            <div class="footer-tags">
+                <span>Python 3.10+</span>
+                <span>Flask 3.0</span>
+                <span>ES 9.3</span>
+                <span>v2.1</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="fermerLightbox()">
+        <button class="lightbox-fermer" onclick="fermerLightbox()">✕ Fermer</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
