@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Démo — SecureDash</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="demo-nav">
+        <div class="navbar" style="width: 90%; max-width: 1200px; margin: auto;">
+            <div class="icon">
+                <a href="index.html"><h2 class="logo">SecureDash</h2></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html#plateforme">Plateforme</a></li>
+                    <li><a href="index.html#fonctionnalites">Fonctionnalités</a></li>
+                    <li><a href="index.html#architecture">Architecture</a></li>
+                    <li><a href="index.html#installer">Installer</a></li>
+                </ul>
+            </div>
+            <div class="nav-btn">
+                <a href="index.html#installer" class="btn-installer">Installer →</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- INTRO DEMO -->
+    <div class="demo-intro">
+        <p class="demo-label">Démonstration</p>
+        <h1>Voir SecureDash en action</h1>
+        <p class="demo-sous-titre">
+            Une walkthrough complète du dashboard — de la réception d'une alerte
+            jusqu'à la génération du rapport PDF.
+        </p>
+    </div>
+
+
+    <!-- =============================================
+         ESPACE VIDEO
+    ============================================= -->
+    <div class="section-video">
+        <div class="video-wrapper">
+
+            <!--
+            ================================================
+            INSÉREZ VOTRE VIDÉO ICI
+            ================================================
+
+            Option 1 — Fichier local (MP4) :
+            <video controls width="100%">
+                <source src="demo-video.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+
+            Option 2 — YouTube :
+            <iframe
+                src="https://www.youtube.com/embed/VOTRE_ID_VIDEO"
+                title="Démo SecureDash"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            Option 3 — Loom :
+            <iframe
+                src="https://www.loom.com/embed/VOTRE_ID_LOOM"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+            ================================================
+            -->
+
+            <div class="video-placeholder">
+                <div class="video-placeholder-inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#ff7200" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445"/>
+                    </svg>
+                    <p>Vidéo de démonstration</p>
+                    <small>Remplacez ce bloc par votre vidéo dans le code</small>
+                </div>
+            </div>
+
+        </div>
+        <p class="video-note">Durée estimée : 3 à 5 minutes · Sous-titres disponibles</p>
+    </div>
+
+
+    <!-- CE QUE MONTRE LA DEMO -->
+    <div class="section section-gris">
+        <div class="section-header">
+            <span class="section-tag">Dans cette démo</span>
+            <h2>Ce que vous allez voir</h2>
+            <p>La vidéo suit un scénario réel — une attaque simulée en lab SOC, détectée et traitée de bout en bout.</p>
+        </div>
+
+        <div class="demo-etapes">
+
+            <div class="demo-etape">
+                <div class="demo-etape-num">01</div>
+                <div class="demo-etape-contenu">
+                    <h4>Connexion au dashboard</h4>
+                    <p>Authentification JWT, vue d'ensemble des alertes actives et état des agents connectés.</p>
+                </div>
+            </div>
+
+            <div class="demo-etape">
+                <div class="demo-etape-num">02</div>
+                <div class="demo-etape-contenu">
+                    <h4>Simulation d'une attaque Nmap</h4>
+                    <p>Lancement d'un scan Nmap depuis la machine Kali du lab. Suricata détecte et remonte l'alerte dans Elasticsearch.</p>
+                </div>
+            </div>
+
+            <div class="demo-etape">
+                <div class="demo-etape-num">03</div>
+                <div class="demo-etape-contenu">
+                    <h4>Réception de l'alerte en temps réel</h4>
+                    <p>L'alerte apparaît dans le dashboard via WebSocket. Score critique ≥ 12 — le daemon déclenche l'appel Infobip.</p>
+                </div>
+            </div>
+
+            <div class="demo-etape">
+                <div class="demo-etape-num">04</div>
+                <div class="demo-etape-contenu">
+                    <h4>Gestion de l'incident</h4>
+                    <p>Création automatique de l'incident, documentation des actions menées, identification de la cause racine.</p>
+                </div>
+            </div>
+
+            <div class="demo-etape">
+                <div class="demo-etape-num">05</div>
+                <div class="demo-etape-contenu">
+                    <h4>Génération du rapport PDF</h4>
+                    <p>Export du rapport d'incident complet en PDF depuis l'interface, avec toutes les informations structurées.</p>
+                </div>
+            </div>
+
+            <div class="demo-etape">
+                <div class="demo-etape-num">06</div>
+                <div class="demo-etape-contenu">
+                    <h4>Résolution et clôture</h4>
+                    <p>Passage du statut "En correction" à "Résolu". L'incident est archivé avec le rapport associé.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ENVIRONNEMENT TECHNIQUE -->
+    <div class="section">
+        <div class="section-header">
+            <span class="section-tag">Environnement</span>
+            <h2>Lab utilisé pour la démo</h2>
+            <p>La démonstration tourne sur un lab local avec les machines suivantes.</p>
+        </div>
+
+        <div class="demo-lab">
+
+            <div class="lab-machine">
+                <div class="lab-machine-entete">
+                    <span class="lab-dot lab-dot-vert"></span>
+                    <strong>Machine 1 — Serveur SOC</strong>
+                </div>
+                <ul class="lab-specs">
+                    <li>SecureDash v2.1</li>
+                    <li>Elasticsearch 9.3</li>
+                    <li>Wazuh Server</li>
+                    <li>Ubuntu Server 22.04</li>
+                </ul>
+            </div>
+
+            <div class="lab-fleche">→</div>
+
+            <div class="lab-machine">
+                <div class="lab-machine-entete">
+                    <span class="lab-dot lab-dot-bleu"></span>
+                    <strong>Machine 2 — Réseau surveillé</strong>
+                </div>
+                <ul class="lab-specs">
+                    <li>Agent Wazuh installé</li>
+                    <li>Suricata IDS actif</li>
+                    <li>Trafic réseau monitoré</li>
+                    <li>Ubuntu 22.04</li>
+                </ul>
+            </div>
+
+            <div class="lab-fleche">→</div>
+
+            <div class="lab-machine">
+                <div class="lab-machine-entete">
+                    <span class="lab-dot lab-dot-rouge"></span>
+                    <strong>Machine 3 — Attaquant simulé</strong>
+                </div>
+                <ul class="lab-specs">
+                    <li>Kali Linux</li>
+                    <li>Nmap (scan réseau)</li>
+                    <li>Machine du lab uniquement</li>
+                    <li>Activité de test autorisée</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- CTA -->
+    <div class="cta">
+        <h2>Prêt à l'installer chez vous ?</h2>
+        <p>Tout ce que vous avez vu dans la démo tourne sur votre propre serveur.</p>
+        <div class="cta-btns">
+            <a href="index.html#installer" class="btn-orange">Voir l'installation</a>
+            <a href="index.html" class="btn-blanc">Retour au site</a>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-contenu">
+            <div class="footer-marque">
+                <h3 class="logo">SecureDash</h3>
+                <p>Tableau de bord SOC open source.<br>Projet de Licence en cybersécurité.</p>
+            </div>
+            <div class="footer-col">
+                <p class="footer-titre">Plateforme</p>
+                <ul>
+                    <li><a href="index.html#plateforme">Tableau de bord</a></li>
+                    <li><a href="index.html#plateforme">Alertes</a></li>
+                    <li><a href="index.html#plateforme">Incidents</a></li>
+                    <li><a href="index.html#fonctionnalites">Conformité</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <p class="footer-titre">Ressources</p>
+                <ul>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">Guide d'installation</a></li>
+                    <li><a href="#">Changelog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <p class="footer-titre">Projet</p>
+                <ul>
+                    <li><a href="index.html#architecture">Architecture</a></li>
+                    <li><a href="index.html#fonctionnalites">Technologies</a></li>
+                    <li><a href="#">Soutenance 2025</a></li>
+                    <li><a href="mailto:">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bas">
+            <p>© 2025 Mafaze OSSENI &amp; Riyad ODJOUADE — Projet de Licence</p>
+            <div class="footer-tags">
+                <span>Python 3.10+</span>
+                <span>Flask 3.0</span>
+                <span>ES 9.3</span>
+                <span>v2.1</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
